@@ -1,0 +1,27 @@
+//Primary
+$Lime-Green: #1db489;
+$Bright-Red: #dc414c;
+$Facebook: #198ff5;
+$Twitter: #1ca0f2;
+$Instagram: linear-gradient(225deg, #df4896 0%, #ee877e 50.91%, #fdc366 100%);
+$YouTube: #c4032a;
+$dark-Toggle: linear-gradient(225deg, #40db82 0%, #388fe7 98.02%);
+$light-Toggle: #aeb3cb;
+:root {
+  //light theme
+  --heading-clr: #1d1f29;
+  --subheading-clr: #63687d;
+  --bg-pattern-clr: #f7f9ff;
+  --card-bg-clr: #f1f3fa;
+  --card-bg-hover-clr: #e1e4f0;
+  --main-bg: #ffffff;
+}
+
+.dark-theme {
+  --heading-clr: #ffffff;
+  --subheading-clr: #8c98c6;
+  --bg-pattern-clr: #20222f;
+  --card-bg-clr: #252b42;
+  --card-bg-hover-clr: #333a55;
+  --main-bg: #1d1f29;
+}

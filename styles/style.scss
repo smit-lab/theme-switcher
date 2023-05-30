@@ -1,0 +1,245 @@
+@import "reset";
+@import "variable";
+@import "function";
+@import "common";
+
+body {
+  background-color: var(--main-bg);
+}
+
+.nav,
+.hero,
+.overview {
+  max-width: calc(100vw - rem(48));
+  margin: 0 auto;
+}
+
+h1,
+h5 {
+  color: var(--heading-clr);
+}
+
+h4,
+p {
+  color: var(--subheading-clr);
+}
+
+header {
+  padding: rem(36) rem(24) rem(42);
+}
+
+.nav {
+  @include flex-justify-center;
+  flex-direction: column;
+  gap: rem(16);
+
+  &-txt {
+    padding-bottom: rem(24);
+    border-bottom: 1px solid #848bab;
+    &__heading {
+      font-size: rem(24);
+      margin-bottom: rem(4);
+    }
+    &__subheading {
+      font-size: rem(14);
+    }
+  }
+}
+
+.mode-name {
+  color: var(--subheading-clr);
+  font-weight: 700;
+  font-size: rem(14);
+}
+
+input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.toggle-switch {
+  @include flex-all-center;
+  gap: rem(8);
+}
+
+.toggling {
+  cursor: pointer;
+  width: rem(52);
+  height: rem(28);
+  background: $light-Toggle;
+  border-radius: rem(100);
+  display: block;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: rem(18);
+    height: rem(18);
+    border-radius: 50%;
+    background: #fff;
+    top: rem(5);
+    left: rem(5);
+    transition: all 0.3s ease;
+  }
+
+  &:active::after {
+    width: rem(22);
+  }
+}
+
+input:checked + .toggling {
+  background: $dark-Toggle;
+}
+
+input:checked + .toggling:after {
+  left: calc(100% - rem(5));
+  transform: translateX(-100%);
+}
+
+.hero {
+  margin-bottom: rem(46);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(255), 1fr));
+  gap: rem(24);
+  text-align: center;
+
+  &-box {
+    background-color: var(--card-bg-clr);
+    height: rem(216);
+    display: grid;
+    place-content: center;
+    border-top: 4px solid;
+    border-radius: rem(5);
+    overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--card-bg-hover-clr);
+    }
+
+    &-fb {
+      border-color: $Facebook;
+    }
+    &-twitter {
+      border-color: $Twitter;
+    }
+    &-insta {
+      position: relative;
+      border: none;
+      &::before {
+        content: "";
+        width: 100%;
+        height: rem(4);
+        background: $Instagram;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    &-youtube {
+      border-color: $YouTube;
+    }
+
+    &__social {
+      @include flex-align-center;
+      justify-content: center;
+      gap: rem(8);
+      margin-bottom: rem(28);
+    }
+
+    &-txt {
+      margin-bottom: rem(25);
+      & h1 {
+        font-size: rem(56);
+        line-height: 0.86;
+        margin-bottom: rem(9);
+      }
+
+      & p {
+        font-size: rem(12);
+        line-height: 1.25;
+        letter-spacing: rem(5);
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+.stats-change-box {
+  @include flex-align-center;
+  justify-content: center;
+  gap: rem(4);
+  & img {
+    width: rem(8);
+    height: rem(4);
+  }
+}
+.social-icons {
+  width: rem(20);
+  height: rem(20);
+  &-twitter {
+    width: rem(20);
+    height: rem(16.25);
+  }
+}
+.change-txt {
+  font-size: rem(12);
+  line-height: 1.25;
+
+  &-up {
+    color: $Lime-Green;
+  }
+  &-down {
+    color: $Bright-Red;
+  }
+}
+
+.overview {
+  margin-bottom: rem(30);
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(255), 1fr));
+    gap: rem(16);
+  }
+  &-heading {
+    font-size: rem(24);
+    margin-bottom: rem(27);
+  }
+
+  &-box {
+    border-radius: rem(5);
+    background-color: var(--card-bg-clr);
+    height: rem(125);
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 rem(30);
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--card-bg-hover-clr);
+    }
+
+    & h4 {
+      font-size: rem(14);
+      margin-bottom: rem(23);
+    }
+
+    & h1 {
+      font-size: rem(32);
+    }
+
+    &-change {
+      @include flex-justify-center;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+}
+
+.transition {
+  transition: all 0.35s ease-in-out;
+}
+
+@import "desktop";
