@@ -7,21 +7,37 @@ $Instagram: linear-gradient(225deg, #df4896 0%, #ee877e 50.91%, #fdc366 100%);
 $YouTube: #c4032a;
 $dark-Toggle: linear-gradient(225deg, #40db82 0%, #388fe7 98.02%);
 $light-Toggle: #aeb3cb;
+
+//light
+$heading-clr--light: #1d1f29;
+$subheading-clr--light: #63687d;
+$bg-pattern-clr--light: #f7f9ff;
+$card-bg-clr--light: #f1f3fa;
+$card-bg-hover-clr--light: #e1e4f0;
+$main-bg--light: #ffffff;
+
+//dark
+$heading-clr--dark: #ffffff;
+$subheading-clr--dark: #8c98c6;
+$bg-pattern-clr--dark: #20222f;
+$card-bg-clr--dark: #252b42;
+$card-bg-hover-clr--dark: #333a55;
+$main-bg--dark: #1d1f29;
+
 :root {
-  //light theme
-  --heading-clr: #1d1f29;
-  --subheading-clr: #63687d;
-  --bg-pattern-clr: #f7f9ff;
-  --card-bg-clr: #f1f3fa;
-  --card-bg-hover-clr: #e1e4f0;
-  --main-bg: #ffffff;
+  --heading-clr: #{$heading-clr--light};
+  --subheading-clr: #{$subheading-clr--light};
+  --bg-pattern-clr: #{$bg-pattern-clr--light};
+  --card-bg-clr: #{$card-bg-clr--light};
+  --card-bg-hover-clr: #{$card-bg-hover-clr--light};
+  --main-bg: #{$main-bg--light};
 }
 
-.dark-theme {
-  --heading-clr: #ffffff;
-  --subheading-clr: #8c98c6;
-  --bg-pattern-clr: #20222f;
-  --card-bg-clr: #252b42;
-  --card-bg-hover-clr: #333a55;
-  --main-bg: #1d1f29;
+[dark-theme="dark"] {
+  --heading-clr: #{$heading-clr--dark};
+  --subheading-clr: #{$subheading-clr--dark};
+  --bg-pattern-clr: #{$bg-pattern-clr--dark};
+  --card-bg-clr: #{$card-bg-clr--dark};
+  --card-bg-hover-clr: #{$card-bg-hover-clr--dark};
+  --main-bg: #{$main-bg--dark};
 }

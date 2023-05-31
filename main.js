@@ -1,16 +1,22 @@
 let toggle = document.getElementById("toggle");
+let bodyTheme = document.getElementById("body");
+toggle.addEventListener("click", () => {
+  darkTheme(bodyTheme);
+});
 
-toggle.addEventListener("click", darkTheme);
-
-function darkTheme() {
+function darkTheme(bodyTheme) {
   if (toggle.checked == true) {
-    document.body.classList.add("dark-theme");
-    document.body.classList.add("transition");
+    bodyTheme.setAttribute("dark-theme", "dark");
+    bodyTheme.classList.add("transition");
   } else {
-    document.body.classList.remove("dark-theme");
+    bodyTheme.removeAttribute("dark-theme", "dark");
   }
 }
 
-window.addEventListener('load', () => {
-  toggle.checked == false;
-})
+window.addEventListener("load", () => {
+  toggle.checked = false;
+});
+
+window.addEventListener("beforeunload", () => {
+  toggle.checked = false;
+});

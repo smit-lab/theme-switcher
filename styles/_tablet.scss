@@ -1,0 +1,20 @@
+@media (min-width: 768px) {
+  .nav,
+  .hero,
+  .overview {
+    max-width: rem(689);
+  }
+
+  .nav {
+    flex-direction: row;
+    &-txt {
+      padding: 0;
+      border: none;
+    }
+  }
+
+  .hero,
+  .overview {
+    gap: rem(30);
+  }
+}

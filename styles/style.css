@@ -46,7 +46,7 @@ svg {
   --main-bg: #ffffff;
 }
 
-.dark-theme {
+[dark-theme=dark] {
   --heading-clr: #ffffff;
   --subheading-clr: #8c98c6;
   --bg-pattern-clr: #20222f;
@@ -289,17 +289,28 @@ input:checked + .toggling:after {
 }
 
 @media (min-width: 768px) {
+  .nav,
+  .hero,
+  .overview {
+    max-width: 43.0625rem;
+  }
   .nav {
-    max-width: 69.375rem;
     flex-direction: row;
   }
   .nav-txt {
     padding: 0;
     border: none;
   }
-  .hero, .overview {
-    max-width: 69.375rem;
+  .hero,
+  .overview {
     gap: 1.875rem;
+  }
+}
+@media (min-width: 1025px) {
+  .nav,
+  .hero,
+  .overview {
+    max-width: 69.375rem;
   }
 }
 
